@@ -1,3 +1,3 @@
-add_executable(main Source.cpp)
+add_executable(${PROJECT_NAME} Source.cpp)
 
-target_link_libraries(main glfw glad)
+target_link_libraries(${PROJECT_NAME} glfw glad)
