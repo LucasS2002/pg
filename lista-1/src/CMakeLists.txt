@@ -1,3 +1,11 @@
-add_executable(main main.cpp)
+add_executable(cinco cinco.cpp)
+add_executable(seis seis.cpp)
+add_executable(sete sete.cpp)
+add_executable(oito oito.cpp)
+add_executable(nove nove.cpp)
 
-target_link_libraries(main glfw glad)
+target_link_libraries(cinco glfw glad glhelper)
+target_link_libraries(seis glfw glad glhelper)
+target_link_libraries(sete glfw glad glhelper)
+target_link_libraries(oito glfw glad glhelper)
+target_link_libraries(nove glfw glad glhelper)
