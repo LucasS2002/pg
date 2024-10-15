@@ -83,7 +83,7 @@ GLuint create_shader_program(std::initializer_list<GLuint> shaders, bool delete_
         glGetProgramiv(program, GL_INFO_LOG_LENGTH, &log_length);
 
         std::string log(log_length, ' ');
-        glGetProgramInfoLog(program, log_length, NULL, log.data());
+        glGetProgramInfoLog(program, log_length, NULL, const_cast<char*>(log.data()));
 
         std::cerr << "Program linking failed.\n" << log << std::endl;
         terminate();

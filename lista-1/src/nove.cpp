@@ -14,12 +14,14 @@ constexpr glh::shape make_face();
 
 constexpr GLfloat PIXEL = 0.08f;
 
+bool wireframe = false;
+
 int main() {
     // GLFW init
     glfwSetErrorCallback(glh::glfw_error_callback);
     glfwInit();
 
-    GLFWwindow* window = glh::create_window("7");
+    GLFWwindow* window = glh::create_window("9");
     glfwMakeContextCurrent(window);
 
     // GLAD init
@@ -61,7 +63,6 @@ int main() {
     while (!glfwWindowShouldClose(window)) {
         glClear(GL_COLOR_BUFFER_BIT);
 
-
         glUniform3f(uniform_location, 0.94f, 0.23f, 0.22f);
         glBindVertexArray(hat_vao);
         glDrawElements(GL_TRIANGLES, hat.indices.size(), GL_UNSIGNED_INT, 0);
@@ -79,6 +80,10 @@ int main() {
     }
 
     // clean up
+    glDeleteVertexArrays(1, &hat_vao);
+    glDeleteVertexArrays(1, &head_vao);
+    glDeleteVertexArrays(1, &face_vao);
+    glDeleteProgram(shader_program);
 
     glfwTerminate();
 
@@ -145,5 +150,10 @@ constexpr glh::shape make_face() {
 void glfw_key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
     if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
         glfwSetWindowShouldClose(window, GLFW_TRUE);
+    }
+
+    if (key == GLFW_KEY_W && action == GLFW_PRESS) {
+        wireframe = !wireframe;
+        glPolygonMode(GL_FRONT_AND_BACK, wireframe ? GL_LINE : GL_FILL);
     }
 }

@@ -16,13 +16,15 @@ Os vértices são armazenados em objetos chamados *Vertex Buffer Objects (VBOs)*
 
 ---
 
-<!-- ## 3. Explique o que é VBO, VAO e EBO, e como se relacionam (se achar mais fácil, pode fazer um gráfico representando a relação entre eles).
+## 3. Explique o que é VBO, VAO e EBO, e como se relacionam (se achar mais fácil, pode fazer um gráfico representando a relação entre eles).
 
 VBO (Vertex Buffer Object) é onde são armazenadas informações como as coordenadas de vértices e suas cores.
 
-EBO
+EBO (Element Buffer Object) é onde são armazenados índices do VBO a serem utilizados ao desenhar.
 
---- -->
+VAO (Vertex Array Object) guarda as informações de como serão utilizadas as informações de VBOs no shader e pode também guardar um EBO.
+
+---
 
 ## 5. Faça o desenho de 2 triângulos na tela. Desenhe eles:
 - ### Apenas com o polígono preenchido
@@ -31,6 +33,8 @@ EBO
 - ### Com as 3 formas de desenho juntas
 
 [Fonte](src/cinco.cpp)
+
+![cinco](./img/cinco.png "cinco")
 
 ---
 
@@ -43,11 +47,15 @@ EBO
 
 [Fonte](src/seis.cpp) (Utilize as setas para ciclar entra as formas)
 
+![seis](./img/seis.gif "seis")
+
 ---
 
 ## 7. Desenhe uma espiral
 
 [Fonte](src/sete.cpp)
+
+![sete](./img/sete.png "sete")
 
 ---
 
@@ -58,10 +66,14 @@ EBO
 
 [Fonte](src/oito.cpp)
 
+![oito](./img/oito.png "oito")
+
 ---
 
 ## 9. Faça um desenho em um papel quadriculado (pode ser no computador mesmo) e reproduza-o utilizando primitivas em OpenGL. Neste exercício você poderá criar mais de um VAO e fazer mais de uma chamada de desenho para poder utilizar primitivas diferentes, se necessário.
 
 [Fonte](src/nove.cpp)
+
+![nove](./img/nove.png "nova")
 
 ---
