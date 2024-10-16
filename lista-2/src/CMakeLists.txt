@@ -1,0 +1,15 @@
+add_library(shaders INTERFACE shaders.hpp)
+set_target_properties(shaders PROPERTIES LINKER_LANGUAGE CXX)
+target_include_directories(shaders INTERFACE ".")
+
+add_executable(um um.cpp)
+add_executable(dois dois.cpp)
+add_executable(tres tres.cpp)
+add_executable(quatro quatro.cpp)
+add_executable(cinco cinco.cpp)
+
+target_link_libraries(um glfw glad glm glhelper shaders)
+target_link_libraries(dois glfw glad glm glhelper shaders)
+target_link_libraries(tres glfw glad glm glhelper shaders)
+target_link_libraries(quatro glfw glad glm glhelper shaders)
+target_link_libraries(cinco glfw glad glm glhelper shaders)
